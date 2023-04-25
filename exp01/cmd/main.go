@@ -5,7 +5,7 @@ import (
 	"crypto/tls"
 	"github.com/quic-go/quic-go"
 	"log"
-	"pro01/quic/demo03/util"
+	"pro01/quic/demo03/exp01/util"
 	"time"
 )
 
@@ -34,7 +34,7 @@ func main() {
 			if err != nil {
 				log.Fatal(err)
 			}
-			buf := []byte("hello from client...")
+			buf := []byte("hello from client1...")
 			stream.Write(buf)
 			stream.Close()
 
@@ -45,7 +45,7 @@ func main() {
 			buf0 := make([]byte, 100)
 			stream0.Read(buf0)
 			stream0.Close()
-			log.Println("client: ", string(buf0))
+			log.Println("client1: ", string(buf0))
 		}
 	}()
 
